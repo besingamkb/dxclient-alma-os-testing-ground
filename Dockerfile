@@ -1,5 +1,5 @@
 # Use the Alma Linux base image
-FROM almalinux:latest
+FROM almalinux:9.3
 
 # Update package repository and install Node.js 18, npm, and make
 RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
@@ -10,8 +10,8 @@ RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
 RUN node -v && npm -v
 
 # Install Xvfb
+#RUN dnf -y install xorg-x11-server-Xvfb libatk-bridge-2.0.so.0 atk java-atk-wrapper at-spi2-atk gtk3 libXt libdrm mesa-libgbm
 RUN dnf -y install xorg-x11-server-Xvfb
-
 # Set working directory
 WORKDIR /app
 
