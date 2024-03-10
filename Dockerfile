@@ -1,13 +1,13 @@
 # Use the Alma Linux base image
 FROM almalinux:9.3
 
-RUN yum -y update libgcc* libstdc++* glibc*
-RUN yum -y install java-1.8.0-openjdk
-RUN yum -y install git
-RUN yum -y install gcc gcc-c++
-RUN yum -y install libgcc*i686 libstdc++*i686 glibc*i686
-RUN yum -y install unzip
-RUN yum -y install zip
+RUN yum -y update libgcc* libstdc++* glibc* \
+    yum -y install java-1.8.0-openjdk \
+    yum -y install git \
+    yum -y install gcc gcc-c++ \
+    yum -y install libgcc*i686 libstdc++*i686 glibc*i686 \
+    yum -y install unzip \
+    yum -y install zip
 
 # Update package repository and install Node.js 18, npm, and make
 RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
